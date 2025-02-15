@@ -8,13 +8,20 @@ import {
     MdAssessment,
     MdSwapHorizontalCircle,
 } from 'react-icons/md';
-import { getUsers } from '../api/user';
+import { UserRoles, getUsers } from '../api/user';
 import { GetTopSellingProductsAsync, getProducts } from '../api/product';
 import { GetOrderDTO, getOrders } from '../api/orders';
 import { GetTopCategoriesByProductCount, GetTopSellingCategoryDTO } from '../api/categories';
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext';
 
 const Home = () => {
+    const { user, loading } = useAuth();
 
+    // Redirect logic
+    if (!loading && (!user || user.role !== UserRoles.Admin)) {
+        return <Navigate to="/signin" replace />;
+    }
     const queryGetTotalUsers = useQuery({
         queryKey: ['totalusers'],
         queryFn: getUsers,
