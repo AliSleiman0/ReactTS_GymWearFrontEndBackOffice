@@ -21,7 +21,7 @@ interface ChartBoxProps {
     chartType: string; // 'line', 'bar', 'area', 'pie'
     color?: string;
     IconBox?: IconType;
-    total?: number;
+    total?: number | string;
     link?: string;
     title?: string;
     dataKey?: string;
@@ -49,7 +49,6 @@ const ChartBox: React.FC<ChartBoxProps> = ({
     IconBox,
     title,
     dataKey,
-   
     total,
     link,
     chartData,

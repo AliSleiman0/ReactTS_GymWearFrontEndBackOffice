@@ -20,7 +20,7 @@ interface AuthContextType {
     user: User | null;
     accessToken: string | null;
     loading: boolean;
-    login: (email: string, password: string) => Promise<void>;
+    login: (email: string, password: string) => Promise<any>;
     signup: (signupData: SignupData) => Promise<void>;
     logout: () => void;
 }
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const login = async (email: string, password: string): Promise<any> => {
         try {
             const { data } = await axios.post<{ userInfo: User; token: string }>(
-                'https://localhost:7250/api/user/auth/login',
+                'https://beastfitwearapi.azurewebsites.net/api/user/auth/login',
                 { email, password }
             );
 
@@ -91,7 +91,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const signup = async (signupData: SignupData) => {
         try {
             const { data } = await axios.post<{ user: User; accessToken: string }>(
-                'https://localhost:7250/api/user/auth/signup',
+                'https://beastfitwearapi.azurewebsites.net/api/user/auth/signup',
                 signupData
             );
             localStorage.setItem('accessToken', data.accessToken);
