@@ -20,17 +20,17 @@ const Skills = () => {
     });
 
     // Fetch skills
-    const { data: frontendSkills, isLoading: frontendLoading } = useQuery({
+    const { data: frontendSkills } = useQuery({
         queryKey: ["frontendSkills"],
         queryFn: () => skillsFApi.getAll(),
     });
 
-    const { data: backendSkills, isLoading: backendLoading } = useQuery({
+    const { data: backendSkills  } = useQuery({
         queryKey: ["backendSkills"],
         queryFn: () => skillsBApi.getAll(),
     });
 
-    const { data: generalSkills, isLoading: generalLoading } = useQuery({
+    const { data: generalSkills} = useQuery({
         queryKey: ["generalSkills"],
         queryFn: () => skillsGApi.getAll(),
     });
@@ -38,9 +38,7 @@ const Skills = () => {
     const skillsData = skillType === 'SkillsF' ? frontendSkills :
         skillType === 'SkillsB' ? backendSkills :
             generalSkills;
-    const isLoading = skillType === 'SkillsF' ? frontendLoading :
-        skillType === 'SkillsB' ? backendLoading :
-            generalLoading;
+ 
 
     // Columns for DataTable
     const columns: GridColDef[] = [

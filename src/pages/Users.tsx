@@ -7,6 +7,7 @@ import { updateAbout, About } from '../api/about';
 import Modal from '../components/Modal';
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
 import TextArea from '../components/TextArea';
+import { getAllWelcome } from '../api/welcome';
 
 export const Users = () => {
     const queryClient = useQueryClient();
