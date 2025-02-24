@@ -64,7 +64,7 @@ function App() {
             children: [
                 {
                     index: true,
-                    element: <Navigate to="/about" replace />,
+                    element: <Navigate to="/signin" replace />,
                 },
                 {
                     path: 'about',
