@@ -35,12 +35,13 @@ const StatusEditModal: React.FC<StatusEditModalProps> = ({
     return (
         <Dialog open={isOpen} onClose={onClose}>
             <DialogTitle>Update Order Status</DialogTitle>
-            <DialogContent className="py-4">
+            <DialogContent  /*className="py-4">*/>
+               
                 <Select
                     value={selectedStatus}
                     onChange={(e) => setSelectedStatus(e.target.value as string)}
-                    fullWidth
-                    className="min-w-[200px]"
+                    /*fullWidth*/
+                    /*className="min-w-[200px]"*/
                 >
                     {statusOptions.map(status => (
                         <MenuItem key={status} value={status}>

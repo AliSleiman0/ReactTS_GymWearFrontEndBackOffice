@@ -68,7 +68,7 @@ const Navbar = () => {
               >
                 <DiReact className="text-3xl sm:text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
                 <span className="text-[16px] leading-[1.2] sm:text-lg xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
-                 BeastFit Wear
+                 AliSleiman 
                 </span>
               </Link>
               {menu.map((item, index) => (
@@ -87,7 +87,7 @@ const Navbar = () => {
         <Link to={'/'} className="flex items-center gap-1 xl:gap-2">
           <DiReact className="text-3xl sm:text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
           <span className="text-[16px] leading-[1.2] sm:text-lg xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
-             BeastFit Wear Dashboard
+             AliSleiman Dashboard
           </span>
         </Link>
       </div>

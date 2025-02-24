@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <div className="w-full px-5 py-5 xl:m-0 mt-5 flex justify-between gap-2 font-semibold xl:text-sm">
       <span className="hidden xl:inline-flex text-sm">
-        BeastFit Dashboard
+        2025 | 
       </span>
       <div className="flex gap-1 items-center">
-        <span className="text-sm">BeastFit Admin Dashboard</span>
+              <span className="text-sm">AliSleiman Dashboard</span>
         <DiReact className="text-2xl xl:text-xl 2xl:text-2xl text-primary animate-spin-slow" />
       </div>
     </div>
