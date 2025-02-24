@@ -3,20 +3,21 @@ import { GridColDef } from '@mui/x-data-grid';
 import DataTable from '../components/DataTable';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-import { updateAbout, About } from '../api/about';
-import Modal from '../components/Modal';
+import { getAllAbout, updateAbout, About } from '../api/about';
+import Modal from '../components/Modal'; 
+
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
 import TextArea from '../components/TextArea';
 
-export const Users = () => {
+const About = () => {
     const queryClient = useQueryClient();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedAbout, setSelectedAbout] = useState<About | null>(null);
 
     // Fetch data
     const { isLoading, isError, isSuccess, data } = useQuery({
-        queryKey: ['welcomeData'],
-        queryFn: getAllWelcome,
+        queryKey: ['aboutData'],
+        queryFn: getAllAbout,
     });
 
     // Mutation for updating About data
@@ -91,10 +92,11 @@ export const Users = () => {
     };
     const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setSelectedAbout((prev) => prev ? { ...prev, [name]: value } : null
+        setSelectedAbout((prev) =>
+            prev ? { ...prev, [name]: value } : null
         );
     };
-
+  
 
     // Toast notifications for loading/error states
     React.useEffect(() => {
@@ -127,14 +129,16 @@ export const Users = () => {
                         columns={columns}
                         rows={[]}
                         includeActionColumn={false}
-                        isOrders={false} />
+                        isOrders={false}
+                    />
                 ) : isSuccess ? (
                     <DataTable
                         slug="about"
                         columns={columns}
                         rows={data}
                         includeActionColumn={false}
-                        isOrders={false} />
+                        isOrders={false}
+                    />
                 ) : (
                     <>
                         <DataTable
@@ -142,7 +146,8 @@ export const Users = () => {
                             columns={columns}
                             rows={[]}
                             includeActionColumn={false}
-                            isOrders={false} />
+                            isOrders={false}
+                        />
                         <div className="w-full flex justify-center">
                             Error while getting the data!
                         </div>
@@ -158,25 +163,29 @@ export const Users = () => {
                             name="firstP"
                             value={selectedAbout?.firstP || ''}
                             onChange={handleInputChange}
-                            required />
+                            required
+                        />
                         <TextArea
                             label="Second Paragraph"
                             name="secondP"
                             value={selectedAbout?.secondP || ''}
                             onChange={handleInputChange}
-                            required />
+                            required
+                        />
                         <TextArea
                             label="Third Paragraph"
                             name="thirdP"
                             value={selectedAbout?.thirdP || ''}
                             onChange={handleInputChange}
-                            required />
+                            required
+                        />
                         <TextArea
                             label="Fourth Paragraph"
                             name="fourthP"
                             value={selectedAbout?.fourthP || ''}
                             onChange={handleInputChange}
-                            required />
+                            required
+                        />
                         <div className="flex justify-end gap-3">
                             <button
                                 type="button"
@@ -199,3 +208,5 @@ export const Users = () => {
         </div>
     );
 };
+
+export default About;
