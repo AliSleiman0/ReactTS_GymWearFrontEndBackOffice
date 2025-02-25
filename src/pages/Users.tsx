@@ -4,6 +4,13 @@ import DataTable from '../components/DataTable';
 
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+<<<<<<< HEAD
+=======
+import { updateAbout, About } from '../api/about';
+import Modal from '../components/Modal';
+import { HiOutlinePencilSquare } from 'react-icons/hi2';
+import TextArea from '../components/TextArea';
+>>>>>>> parent of aa1fc9a (fixes)
 
 import { UserRoles, getUsers } from '../api/user';
 import AddDataUser from '../components/AddDataUser';
