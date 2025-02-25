@@ -10,6 +10,9 @@ import { updateAbout, About } from '../api/about';
 import Modal from '../components/Modal';
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
 import TextArea from '../components/TextArea';
+<<<<<<< HEAD
+>>>>>>> parent of aa1fc9a (fixes)
+=======
 >>>>>>> parent of aa1fc9a (fixes)
 
 import { UserRoles, getUsers } from '../api/user';
