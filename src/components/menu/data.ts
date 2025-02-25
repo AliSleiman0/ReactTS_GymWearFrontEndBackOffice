@@ -1,50 +1,49 @@
 // import toast from 'react-hot-toast';
 import {
- 
+  HiOutlineHome,
 
-  
+  HiOutlineUsers,
   HiOutlineCube,
-  
+  HiOutlineClipboardDocumentList,
  
   HiOutlineArrowLeftOnRectangle,
 } from 'react-icons/hi2';
 // import { IoSettingsOutline } from 'react-icons/io5';
 
 export const menu = [
-  
+  {
+    catalog: 'main',
+    listItems: [
+      {
+        isLink: true,
+        url: '/',
+        icon: HiOutlineHome,
+        label: 'homepage',
+      },
+     
+    ],
+  },
   {
     catalog: 'lists',
     listItems: [
       {
         isLink: true,
-        url: '/welcome',
-            icon: HiOutlineCube,
-        label: 'Welcome',
+        url: '/users',
+        icon: HiOutlineUsers,
+        label: 'users',
       },
       {
         isLink: true,
-        url: '/about',
+        url: '/products',
         icon: HiOutlineCube,
-        label: 'About',
+        label: 'products',
       },
       {
         isLink: true,
-        url: '/skills',
-          icon: HiOutlineCube,
-        label: 'Skills',
-        },
-        {
-            isLink: true,
-            url: '/projects',
-            icon: HiOutlineCube,
-            label: 'Projects',
-        },
-        {
-            isLink: true,
-            url: '/socials',
-            icon: HiOutlineCube,
-            label: 'Socials',
-        },
+        url: '/orders',
+        icon: HiOutlineClipboardDocumentList,
+        label: 'orders',
+      },
      
     ],
   },
